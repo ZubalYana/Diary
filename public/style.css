@@ -11,24 +11,44 @@
   padding: 40px;
   color: #333;
 }
-.wrap h1 {
+.wrap .titleAndThemeCon {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.wrap .titleAndThemeCon h1 {
   font-size: 36px;
   font-weight: 600;
 }
-.wrap .week {
+.wrap .titleAndThemeCon .theme {
+  width: 65px;
+  height: 35px;
+  background-color: #393E46;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.wrap .titleAndThemeCon .theme .theme_circle {
+  width: 35px;
+  height: 35px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 3px solid #393E46;
+}
+.wrap .currentWeek {
   display: flex;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 13px;
 }
-.wrap .week .week_weekDate {
+.wrap .currentWeek .currentWeek_weekDate {
   font-size: 20px;
   font-weight: 400;
   margin: 0 15px;
 }
-.wrap .week .week_arrow {
+.wrap .currentWeek .currentWeek_arrow {
   width: 30px;
   height: 30px;
+  cursor: pointer;
 }
-.wrap .week #week_arrowRight {
+.wrap .currentWeek #currentWeek_arrowRight {
   transform: rotate(180deg);
 }/*# sourceMappingURL=style.css.map */
