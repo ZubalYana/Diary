@@ -53,4 +53,16 @@
         }
     }
 
+    .week{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .weekDay{
+            width: 371px;
+            height: 292px;
+            border: #393E46 3px solid;
+        }
+    }
+
 }

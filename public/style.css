@@ -51,4 +51,15 @@
 }
 .wrap .currentWeek #currentWeek_arrowRight {
   transform: rotate(180deg);
+}
+.wrap .week {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.wrap .week .weekDay {
+  width: 371px;
+  height: 292px;
+  border: #393E46 3px solid;
 }/*# sourceMappingURL=style.css.map */
