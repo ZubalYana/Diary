@@ -54,3 +54,4 @@ function countdownWeekends() {
     }
 }
 setInterval(countdownWeekends, 1000);
+
