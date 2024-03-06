@@ -1,3 +1,4 @@
+//timers functions
 function countdownEndOfYear() {
     var currentDate = new Date(); 
     var targetDate = new Date("June 8, 2024 00:00:00"); 
@@ -16,7 +17,6 @@ function countdownEndOfYear() {
     }
 }
 setInterval(countdownEndOfYear, 1000);
-
 function countdownNextHolidays() {
     var currentDate = new Date(); 
     var targetDate = new Date("March 25, 2024 00:00:00"); 
@@ -35,7 +35,6 @@ function countdownNextHolidays() {
     }
 }
 setInterval(countdownNextHolidays, 1000);
-
 function countdownWeekends() {
     var currentDate = new Date(); 
     var targetDate = new Date("March 9, 2024 00:00:00"); 
@@ -55,3 +54,27 @@ function countdownWeekends() {
 }
 setInterval(countdownWeekends, 1000);
 
+//theme changing
+let theme = localStorage.getItem('theme') || 'light';
+$('#theme').click(function(){
+
+    if(theme == 'light'){
+        theme = 'dark';
+        localStorage.setItem('theme', theme);
+        changeTheme(theme);
+
+    }else{
+        theme = 'light';
+        localStorage.setItem('theme', theme);
+        changeTheme(theme);
+    }
+})
+
+function changeTheme(theme){
+    if(theme == 'light'){
+        $('#theme').css('justify-content', 'flex-start');
+    }else{
+        $('#theme').css('justify-content', 'flex-end');
+    }
+}
+changeTheme(theme);
