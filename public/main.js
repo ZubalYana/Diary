@@ -73,8 +73,24 @@ $('#theme').click(function(){
 function changeTheme(theme){
     if(theme == 'light'){
         $('#theme').css('justify-content', 'flex-start');
+        $('.wrap').css('background-color', '#fff');
+        $('.wrap').css('color', '#333');
+        $('.weekDay').css('border', '#393E46 3px solid');
+        $('.weekDay_lessonHomework').css('color', '#000');
+        $('.theme').css('background-color', '#393E46');
+        $('.theme_circle').css('background-color', '#fff');
+        $('.theme_circle').css('border', '3px solid #393E46');
+
     }else{
         $('#theme').css('justify-content', 'flex-end');
+        $('.wrap').css('background-color', '#393E46');
+        $('.wrap').css('color', '#eee');
+        $('.weekDay').css('border', '#eee 3px solid');
+        $('.weekDay_lessonHomework').css('color', '#fff');
+        $('.theme').css('background-color', '#fff');
+        $('.theme_circle').css('background-color', '#393E46');
+        $('.theme_circle').css('border', '3px solid #fff');
+
     }
 }
 changeTheme(theme);
