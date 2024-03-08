@@ -13,7 +13,7 @@ function countdownEndOfYear() {
 
         document.getElementById("timeToTheEndOfStudyYear").innerHTML = "До кінця навчального року: " + days +  " днів " + hours + " годин " + minutes + " хвилин " + seconds + " секунд ";
     } else {
-        document.getElementById("countdown").innerHTML = "Насолоджуйтеся літом! ";
+        document.getElementById("timeToTheEndOfStudyYear").innerHTML = "Насолоджуйтеся літом! ";
     }
 }
 setInterval(countdownEndOfYear, 1000);
@@ -31,7 +31,7 @@ function countdownNextHolidays() {
 
         document.getElementById("timeToHolidays").innerHTML = "До найблищих канікул: " + days +  " днів " + hours + " годин " + minutes + " хвилин " + seconds + " секунд ";
     } else {
-        document.getElementById("countdown").innerHTML = "Насолоджуйтеся канікулами! ";
+        document.getElementById("timeToHolidays").innerHTML = "Насолоджуйтеся канікулами! ";
     }
 }
 setInterval(countdownNextHolidays, 1000);
