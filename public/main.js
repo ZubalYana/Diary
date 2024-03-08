@@ -49,7 +49,7 @@ function countdownWeekends() {
 
         document.getElementById("timeToWeekends").innerHTML = "До найблищих вихідних: " + days +  " днів " + hours + " годин " + minutes + " хвилин " + seconds + " секунд ";
     } else {
-        document.getElementById("countdown").innerHTML = "Насолоджуйтеся вихідними! ";
+        document.getElementById("timeToWeekends").innerHTML = "Насолоджуйтеся вихідними! ";
     }
 }
 setInterval(countdownWeekends, 1000);
