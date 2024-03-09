@@ -8,8 +8,7 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 
 const users = [
-    { id: 1, username: 'admin', password: 'hello0000' },
-    { id: 2, username: 'vitaliy', password: '1111' },
+    { id: 1, username: 'Yana', password: 'myclassadmin' },
 ];
 passport.use(new LocalStrategy((username, password, done) => {
     const user = users.find(u => u.username == username && u.password == password);
