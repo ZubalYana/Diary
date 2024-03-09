@@ -7,7 +7,10 @@ const LocalStrategy = require('passport-local');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 
-
+const users = [
+    { id: 1, username: 'admin', password: 'hello0000' },
+    { id: 2, username: 'vitaliy', password: '1111' },
+];
 passport.use(new LocalStrategy((username, password, done) => {
     const user = users.find(u => u.username == username && u.password == password);
     if (user) {
@@ -62,16 +65,7 @@ app.get('/', (req, res)=>{
     res.sendFile(path.join(__dirname, 'public', 'index.html'))
 }) 
 
-app.get('/contact', (req, res)=>{
-    res.send('Намер компанії: 0972058786');
-}) 
 
-app.get('/pay', (req, res)=>{
-    res.sendFile(path.join(__dirname, 'public', 'pay.html'))
-}) 
-app.get('/cont', (req, res)=>{
-    res.sendFile(path.join(__dirname, 'public', 'contact.html'))
-}) 
 app.listen(PORT, ()=>{
     console.log(`Server work on PORT: ${PORT}`)
 });
