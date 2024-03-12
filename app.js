@@ -36,6 +36,21 @@ app.post('/login', passport.authenticate('local', {
     failureRedirect: '/login',
     failureFlash: true
 }))
+app.post('/addNewHomework', (req, res) => {
+    const data = req.body;
+    res.sendStatus(200);
+    let content = JSON.parse(fs.readFileSync('homework.txt', 'utf-8'));
+    content.push({
+        homework: data.homework,
+    });
+    fs.writeFile('homework.txt', JSON.stringify(content), (err) => {
+        if (err) {
+            console.log(err)
+        } else {
+            console.log(`Завдання збережено`)
+        }
+    })
+});
 app.get('/admin', isLoggedIn, (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'admin'));
 })
