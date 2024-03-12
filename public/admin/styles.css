@@ -75,15 +75,15 @@
   font-weight: 500;
   width: 150px;
 }
-.wrap .week .time {
-  width: 371px;
-  height: 250px;
-  padding: 15px;
-  margin: 0px 30px 20px 0px;
-}
-.wrap .week .time .timeToSmth {
-  width: 371px;
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 30px;
+.wrap .week .addBtn {
+  width: 200px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 24px;
+  border: #333 3px solid;
+  cursor: pointer;
 }/*# sourceMappingURL=styles.css.map */
