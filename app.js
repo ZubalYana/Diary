@@ -80,6 +80,29 @@ app.get('/', (req, res)=>{
 }) 
 
 
+app.post('/saveNewGoods', (req, res) => {
+    const data = req.body;
+    console.log(data)
+    // res.sendStatus(200);
+    // let content = JSON.parse(fs.readFileSync('mondayHomework.txt', 'utf-8'));
+    // content.push({
+    //     time: data.time,
+    //     name: data.name,
+    //     price: data.price,
+    //     img: data.img,
+    //     bg: data.bg,
+    //     backGroundColor: data.bg, 
+    // });
+    // fs.writeFile('mondayHomework.txt', JSON.stringify(content), (err) => {
+    //     if (err) {
+    //         console.log(err)
+    //     } else {
+    //         console.log(`Д/з збережено`)
+    //     }
+    // })
+});
+
+
 app.listen(PORT, ()=>{
     console.log(`Server work on PORT: ${PORT}`)
 });
