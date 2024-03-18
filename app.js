@@ -6,7 +6,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const session = require('express-session');
 const bodyParser = require('body-parser');
-
+const fs = require('fs');
 const users = [
     { id: 1, username: 'Yana', password: 'myclassadmin' },
 ];
@@ -80,26 +80,23 @@ app.get('/', (req, res)=>{
 }) 
 
 
-app.post('/saveNewGoods', (req, res) => {
-    const data = req.body;
-    console.log(data)
-    // res.sendStatus(200);
-    // let content = JSON.parse(fs.readFileSync('mondayHomework.txt', 'utf-8'));
-    // content.push({
-    //     time: data.time,
-    //     name: data.name,
-    //     price: data.price,
-    //     img: data.img,
-    //     bg: data.bg,
-    //     backGroundColor: data.bg, 
-    // });
-    // fs.writeFile('mondayHomework.txt', JSON.stringify(content), (err) => {
-    //     if (err) {
-    //         console.log(err)
-    //     } else {
-    //         console.log(`Д/з збережено`)
-    //     }
-    // })
+app.post('/addNewMondayHomework', (req, res) => {
+    // Extract MondayData from request body
+    const MondayData = req.body;
+
+    // Convert MondayData to a string
+    const dataString = JSON.stringify(MondayData);
+
+    // Write data to file
+    fs.writeFile('mondayHomework.txt', dataString, (err) => {
+        if (err) {
+            console.error('Error writing to file:', err);
+            res.status(500).send('Error writing to file');
+        } else {
+            console.log('Data written to file successfully.');
+            res.send('Data written to file successfully.');
+        }
+    });
 });
 
 
