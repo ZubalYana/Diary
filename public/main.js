@@ -100,6 +100,14 @@ changeTheme(theme);
 axios.get('http://localhost:3000/getMondayHomework')
 .then(response => {
     console.log('Monday Homework:', response.data);
+    $('#MondayHomework1').html(response.data.Mondayhomework1);
+    $('#MondayHomework2').html(response.data.Mondayhomework2);
+    $('#MondayHomework3').html(response.data.Mondayhomework3);
+    $('#MondayHomework4').html(response.data.Mondayhomework4);
+    $('#MondayHomework5').html(response.data.Mondayhomework5);
+    $('#MondayHomework6').html(response.data.Mondayhomework6);
+    $('#MondayHomework7').html(response.data.Mondayhomework7);
+    $('#MondayHomework8').html(response.data.Mondayhomework8);
 })
 .catch(error => {
     console.error('Error:', error);
