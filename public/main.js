@@ -37,7 +37,7 @@ function countdownNextHolidays() {
 setInterval(countdownNextHolidays, 1000);
 function countdownWeekends() {
     var currentDate = new Date(); 
-    var targetDate = new Date("March 16, 2024 00:00:00"); 
+    var targetDate = new Date("March 23, 2024 00:00:00"); 
 
     var difference = targetDate.getTime() - currentDate.getTime();
 
@@ -94,3 +94,13 @@ function changeTheme(theme){
     }
 }
 changeTheme(theme);
+
+
+//homework getting
+axios.get('http://localhost:3000/getMondayHomework')
+.then(response => {
+    console.log('Monday Homework:', response.data);
+})
+.catch(error => {
+    console.error('Error:', error);
+});

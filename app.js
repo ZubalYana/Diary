@@ -80,14 +80,11 @@ app.get('/', (req, res)=>{
 }) 
 
 
+app.use(express.json());
+
 app.post('/addNewMondayHomework', (req, res) => {
-    // Extract MondayData from request body
     const MondayData = req.body;
-
-    // Convert MondayData to a string
     const dataString = JSON.stringify(MondayData);
-
-    // Write data to file
     fs.writeFile('mondayHomework.txt', dataString, (err) => {
         if (err) {
             console.error('Error writing to file:', err);
@@ -99,6 +96,16 @@ app.post('/addNewMondayHomework', (req, res) => {
     });
 });
 
+app.get('/getMondayHomework', (req, res) => {
+    fs.readFile('mondayHomework.txt', 'utf8', (err, data) => {
+        if (err) {
+            console.error('Error reading file:', err);
+            res.status(500).send('Error reading file');
+        } else {
+            res.send(data);
+        }
+    });
+});
 
 app.listen(PORT, ()=>{
     console.log(`Server work on PORT: ${PORT}`)
