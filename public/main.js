@@ -112,3 +112,20 @@ axios.get('http://localhost:3000/getMondayHomework')
 .catch(error => {
     console.error('Error:', error);
 });
+
+
+axios.get('http://localhost:3000/getTuesdayHomework')
+.then(response => {
+    console.log('Monday Homework:', response.data);
+    $('#TuesdayHomework1').html(response.data.Tuesdayhomework1);
+    $('#TuesdayHomework2').html(response.data.Tuesdayhomework2);
+    $('#TuesdayHomework3').html(response.data.Tuesdayhomework3);
+    $('#TuesdayHomework4').html(response.data.Tuesdayhomework4);
+    $('#TuesdayHomework5').html(response.data.Tuesdayhomework5);
+    $('#TuesdayHomework6').html(response.data.Tuesdayhomework6);
+    $('#TuesdayHomework7').html(response.data.Tuesdayhomework7);
+})
+.catch(error => {
+    console.error('Error:', error);
+});
+

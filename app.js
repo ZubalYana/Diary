@@ -95,7 +95,6 @@ app.post('/addNewMondayHomework', (req, res) => {
         }
     });
 });
-
 app.get('/getMondayHomework', (req, res) => {
     fs.readFile('mondayHomework.txt', 'utf8', (err, data) => {
         if (err) {
@@ -106,6 +105,38 @@ app.get('/getMondayHomework', (req, res) => {
         }
     });
 });
+
+
+
+
+
+app.post('/addNewTuesdayHomework', (req, res) => {
+    const TuesdayData = req.body;
+    const dataString = JSON.stringify(TuesdayData);
+    fs.writeFile('tuesdayHomework.txt', dataString, (err) => {
+        if (err) {
+            console.error('Error writing to file:', err);
+            res.status(500).send('Error writing to file');
+        } else {
+            console.log('Data written to file successfully.');
+            res.send('Data written to file successfully.');
+        }
+    });
+});
+
+app.get('/getTuesdayHomework', (req, res) => {
+    fs.readFile('tuesdayHomework.txt', 'utf8', (err, data) => {
+        if (err) {
+            console.error('Error reading file:', err);
+            res.status(500).send('Error reading file');
+        } else {
+            res.send(data);
+        }
+    });
+});
+
+
+
 
 app.listen(PORT, ()=>{
     console.log(`Server work on PORT: ${PORT}`)
