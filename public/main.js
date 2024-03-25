@@ -112,8 +112,6 @@ axios.get('http://localhost:3000/getMondayHomework')
 .catch(error => {
     console.error('Error:', error);
 });
-
-
 axios.get('http://localhost:3000/getTuesdayHomework')
 .then(response => {
     console.log('Monday Homework:', response.data);
@@ -129,3 +127,32 @@ axios.get('http://localhost:3000/getTuesdayHomework')
     console.error('Error:', error);
 });
 
+
+//week displaying
+
+
+let today = new Date();
+
+// Get the first day of the current week (Monday)
+let firstDayOfWeek = new Date(today);
+let dayOfWeek = today.getDay();
+let diff = today.getDate() - dayOfWeek + (dayOfWeek == 0 ? -6 : 1); // Adjust for Sunday
+firstDayOfWeek.setDate(diff);
+
+// Get the last day of the current week (Sunday)
+let lastDayOfWeek = new Date(firstDayOfWeek);
+lastDayOfWeek.setDate(firstDayOfWeek.getDate() + 6);
+
+// Format the dates as required (e.g., "DD-MM")
+let formattedFirstDay = formatDate(firstDayOfWeek);
+let formattedLastDay = formatDate(lastDayOfWeek);
+
+// Display the current week range
+$('.currentWeek_weekDate').text(formattedFirstDay + ' - ' + formattedLastDay);
+
+// Function to format date as "DD-MM"
+function formatDate(date) {
+    let day = date.getDate();
+    let month = date.getMonth() + 1; // January is 0
+    return (day < 10 ? '0' : '') + day + '-' + (month < 10 ? '0' : '') + month;
+}
