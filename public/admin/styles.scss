@@ -5,6 +5,10 @@
     font-family: Montserrat;
     color: #333;
 }
+::selection{
+    background-color: #6D9886;
+    color: #393E46;
+}
 .wrap{
     width: 100%;
     min-height: 100vh;
